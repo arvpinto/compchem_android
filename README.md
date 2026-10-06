@@ -1,6 +1,6 @@
 # CompChemKit user guide
 
-CompChemKit is a set of small apps for everyday work in computational chemistry and molecular modelling: a lab notebook, a literature hub, an HPC workbench, a structure studio with a QM/MM region builder, and a paper kit, tied together by a control center. It runs as an Android app or in any browser, works offline apart from the online lookups, and keeps your data on your own device. There is no account and no tracking.
+CompChemKit is a set of small apps for everyday work in computational chemistry and molecular modelling: a lab notebook, a literature hub, an HPC workbench, a structure studio with a QM/MM region builder, and a paper kit, tied together by a control center. It runs as an Android app, works offline apart from the online lookups, and keeps your data on your own device. There is no account and no tracking.
 
 ![The control center on a computer](screenshots/desk-control-center.png)
 
@@ -9,8 +9,6 @@ CompChemKit is a set of small apps for everyday work in computational chemistry 
 ## Getting started
 
 **Android (8.0 or newer).** Download `compchemkit-X.Y.Z.apk` from the *Releases* page, open it and allow the install when Android asks. You get six icons, CompChemKit (the control center) and one per suite, all sharing the same data. The app is signed by its author rather than distributed through the Play Store, so Android shows a warning; you install it at your own risk. To update, install the newer APK over the old one and your data stays.
-
-**Computer.** Put the files in a folder, run `python serve_apps.py` (Python 3.8 or newer, no extra packages) and open `http://127.0.0.1:8765/control-center.html`. Keep using the same address and port, because the browser keeps the data of each address separately. The pages also work from a static host such as GitHub Pages, but without automatic backups.
 
 In every suite the apps sit in a bar at the bottom of the screen (a rail on the left on wide screens), next to a **Backup** button. Most apps have a ⋮ menu with exports and *Export backup* / *Import backup*, and a + button to add something new.
 
