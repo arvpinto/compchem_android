@@ -154,5 +154,3 @@
 <p align="justify"> Nothing leaves the phone unless you use a lookup, and then the service receives only what the request needs. Papers come from Crossref; the radar, citations and journal figures from OpenAlex; structures from RCSB PDB, UniProt, AlphaFold DB and PubChem. OpenAlex needs a free API key: sign in at <a href="https://openalex.org/settings/api" target="_blank">openalex.org/settings/api</a>, copy the key and paste it in the control center's Settings. It stays on the phone and is never written into backup files. </p>
 
 <br/>
-
-For building the app and the scientific notes on the QM/MM builder and job scripts, see the [README](../README.md).
