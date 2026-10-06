@@ -1,10 +1,6 @@
-<p align="justify"><b>CompChemKit is a set of small apps for everyday work in computational chemistry and molecular modelling, organised in five suites and tied together by a control center. This guide gives a short tour of each part. </b></p>
+<p align="justify"><b>CompChemKit is an Android app for everyday work in computational chemistry and molecular modelling, organised in five suites and tied together by a control center. This guide gives a short tour of each part. </b></p>
 
-<p align="justify"> The suites are a lab notebook, a literature hub, an HPC workbench, a structure studio with a QM/MM region builder, and a paper kit. They run as an Android app or in any browser, work offline apart from the online lookups (Crossref, OpenAlex, RCSB PDB, UniProt, AlphaFold DB and PubChem), and keep all data on your own device, with no account and no tracking. The screenshots use made-up example data for a fictional researcher: the papers in the library are real publications, while the people, calculations, radar results, citation profile and journal figures are invented or illustrative. </p>
-
-<div align="center">
-    <img src="screenshots/desk-control-center.png" alt="The control center on a computer">
-</div>
+<p align="justify"> The suites are a lab notebook, a literature hub, an HPC workbench, a structure studio with a QM/MM region builder, and a paper kit. The app works offline apart from the online lookups (Crossref, OpenAlex, RCSB PDB, UniProt, AlphaFold DB and PubChem) and keeps all data on the phone, with no account and no tracking. The screenshots use made-up example data for a fictional researcher: the papers in the library are real publications, while the people, calculations, radar results, citation profile and journal figures are invented or illustrative. </p>
 
 ---
 
@@ -13,37 +9,11 @@
 
 <br/>
 
-<p align="justify"><b>Android (8.0 or newer).</b> Download the compchemkit-X.Y.Z.apk file from the <i>Releases</i> page of the repository, open it and allow the install when Android asks. The launcher gets six icons, CompChemKit (the control center) and one per suite, all sharing the same data. The app is signed by its author rather than distributed through the Play Store, so Android shows a warning; you install it at your own risk. To update, install the newer APK over the old one and your data stays. You can check the download against the .sha256 file published next to it: </p>
+<p align="justify"> CompChemKit needs Android 8.0 or newer. Download the compchemkit-X.Y.Z.apk file from the <i>Releases</i> page of the repository on the phone, open it and allow the install when Android asks. The app is signed by its author rather than distributed through the Play Store, so Android shows a warning and Play Protect may offer to scan it; you install it at your own risk. The only permission it asks for is Internet access, for the online lookups. </p>
 
-<pre style="color: white; background-color: black;">
-# Linux
-sha256sum compchemkit-1.0.0.apk
+<p align="justify"> The launcher gets six icons: <b>CompChemKit</b> (the control center), <b>Lab notebook</b>, <b>Literature hub</b>, <b>HPC workbench</b>, <b>Structure studio</b> and <b>Paper kit</b>. Each opens in its own window, so you can switch between them from the recent apps screen, and all of them share the same data. To update, install the newer APK over the old one and your data stays. </p>
 
-# macOS
-shasum -a 256 compchemkit-1.0.0.apk
-
-# Windows (PowerShell)
-Get-FileHash compchemkit-1.0.0.apk -Algorithm SHA256
-</pre>
-
-<br/>
-
-<p align="justify"><b>Computer.</b> Put the files in a folder and start the small server that comes with them (Python 3.8 or newer, no extra packages), then open http://127.0.0.1:8765/control-center.html in the browser. Keep using the same address and port, because the browser keeps the data of each address separately. The pages also work from a static host such as GitHub Pages, but without automatic backups. </p>
-
-<pre style="color: white; background-color: black;">
-# Serve the suites on http://127.0.0.1:8765/
-python serve_apps.py
-
-# Choose the port and keep 60 daily backups per app.
-python serve_apps.py --port 8765 --keep 60
-
-# All options.
-python serve_apps.py --help
-</pre>
-
-<br/>
-
-<p align="justify"> In every suite the apps sit in a bar at the bottom of the screen (a rail on the left on wide screens), next to a <b>Backup</b> button. Most apps have a ⋮ menu with exports and <i>Export backup</i> / <i>Import backup</i>, and a + button to add something new. </p>
+<p align="justify"> In every suite the apps sit in a bar at the bottom of the screen, next to a <b>Backup</b> button. Most apps have a ⋮ menu with exports and <i>Export backup</i> / <i>Import backup</i>, and a + button to add something new. The back button closes an open sheet before leaving the page, and files the apps save (exports, scripts, figures) go to Download/CompChemKit/. </p>
 
 <br>
 <h2> <p align="center"> <b>II - Control center</b> </p></h2>
@@ -168,9 +138,9 @@ python serve_apps.py --help
 
 <br/>
 
-<p align="justify"> Your data lives only on your device, so keep copies. The Android app backs up each app automatically to dated files and copies them to Download/CompChemKit/backups/, where they survive an uninstall; on a computer, serve_apps.py writes the same files once you switch automatic backups on. The <b>Backup</b> button in each suite shows the latest file for each app and restores any earlier one, and <b>Download everything as one file</b>, in the control center's Backup view, saves all apps in a single file that restores on any device. Use it to move to a new phone or computer, and regularly when you use a hosted copy. In a browser the data belongs to that browser and address, and browsers can clear it; Safari does so after about a week without a visit unless the suites are installed to the home screen. </p>
+<p align="justify"> Your data lives only on the phone, so keep copies. The app backs up each app automatically to dated files, a few seconds after its data changes, and copies them to Download/CompChemKit/backups/. These copies stay on the phone even if the app is uninstalled, which deletes the data kept inside the app. The <b>Backup</b> button in each suite shows the latest file for each app and restores any earlier one. The control center's Backup view can also restore from a file you pick, and its <b>Download everything as one file</b> saves all apps in a single file; use it to move to a new phone. </p>
 
-<p align="justify"> Settings offers dark, light or match device, in five palettes (Orchid, Ocean, Forest, Ember and Graphite), and the choice applies at once to every suite and app. </p>
+<p align="justify"> Settings offers dark, light or match device, in five palettes (Orchid, Ocean, Forest, Ember and Graphite). The choice applies at once to every suite, including windows that are already open, and to the status bar. </p>
 
 <br/>
 
@@ -181,8 +151,8 @@ python serve_apps.py --help
 
 <br/>
 
-<p align="justify"> Nothing leaves your device unless you use a lookup, and then the service receives only what the request needs. Papers come from Crossref; the radar, citations and journal figures from OpenAlex; structures from RCSB PDB, UniProt, AlphaFold DB and PubChem. OpenAlex needs a free API key: sign in at <a href="https://openalex.org/settings/api" target="_blank">openalex.org/settings/api</a>, copy the key and paste it in the control center's Settings. It stays on your device and is never written into backup files. </p>
+<p align="justify"> Nothing leaves the phone unless you use a lookup, and then the service receives only what the request needs. Papers come from Crossref; the radar, citations and journal figures from OpenAlex; structures from RCSB PDB, UniProt, AlphaFold DB and PubChem. OpenAlex needs a free API key: sign in at <a href="https://openalex.org/settings/api" target="_blank">openalex.org/settings/api</a>, copy the key and paste it in the control center's Settings. It stays on the phone and is never written into backup files. </p>
 
 <br/>
 
-For installation details, building the Android app and the scientific notes on the QM/MM builder and job scripts, see the [README](../README.md).
+For building the app and the scientific notes on the QM/MM builder and job scripts, see the [README](../README.md).
