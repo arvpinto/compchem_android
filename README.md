@@ -2,10 +2,6 @@
 
 CompChemKit is a set of small apps for everyday work in computational chemistry and molecular modelling: a lab notebook, a literature hub, an HPC workbench, a structure studio with a QM/MM region builder, and a paper kit, tied together by a control center. It runs as an Android app, works offline apart from the online lookups, and keeps your data on your own device. There is no account and no tracking.
 
-![The control center on a computer](screenshots/desk-control-center.png)
-
-> The screenshots use made-up example data for a fictional researcher. The papers in the library are real publications; the people, calculations, radar results, citation profile and journal figures are invented or illustrative.
-
 ## Getting started
 
 **Android (8.0 or newer).** Download `compchemkit-X.Y.Z.apk` from the *Releases* page, open it and allow the install when Android asks. You get six icons, CompChemKit (the control center) and one per suite, all sharing the same data. The app is signed by its author rather than distributed through the Play Store, so Android shows a warning; you install it at your own risk. To update, install the newer APK over the old one and your data stays.
